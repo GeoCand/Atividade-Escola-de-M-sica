@@ -14,8 +14,10 @@ public class AtividadeMusica {
         banda[1] = new Bateria("Bateria Rock", "madeira e metal", 5);
         banda[2] = new Piano("Piano de Cauda", "madeira e metal", 88);
         banda[3] = new Saxofone("Saxofone Alto", "latão", "Alto");
+        
+        AtividadeMusica em = new AtividadeMusica();
 
-        apresentar(banda);
+        em.apresentar(banda);
     }
 
     public static void apresentar(InstrumentoMusical[] banda) {
@@ -27,16 +29,19 @@ public class AtividadeMusica {
                 instrumento.afinar();
             }
         }
+        System.out.println();
         
-        System.out.println("\n--- Apresentação Musical ---");
+        System.out.println("\n--- Instrumentos começando a tocar ---");
         for (InstrumentoMusical instrumento : banda) {
             if (instrumento != null) {
-                instrumento.MostrarInformacoes();
                 instrumento.tocar();
-                System.out.println("---");
             }
         }
+        System.out.println();
         
-        System.out.println("\n*** Fim da apresentação ***");
+        System.out.println("\n--- Mostrando informações dos instrumentos ---");
+        for (int i = 0; i < banda.length ; i++) {
+            System.out.println("Instrumento Musical " + (i + i) + " : ");
+        }
     }
 }
